@@ -1,0 +1,12 @@
+[
+{ "id": 1, "name": "ceramic", "slug": "ceramic" },
+{ "id": 2, "name": "marbel", "slug": "marbel" },
+{ "id": 3, "name": "terracotta", "slug": "terracotta" },
+{ "id": 4, "name": "porcelain", "slug": "porcelain" },
+{ "id": 5, "name": "stone", "slug": "stone" },
+{ "id": 6, "name": "sandstone", "slug": "sandstone" },
+{ "id": 7, "name": "mosaic", "slug": "mosaic" },
+{ "id": 8, "name": "wood", "slug": "wood" },
+{ "id": 9, "name": "ceramic", "slug": "ceramic-tiles" },
+{ "id": 10, "name": "porcelain", "slug": "porcelain-tiles" }
+]

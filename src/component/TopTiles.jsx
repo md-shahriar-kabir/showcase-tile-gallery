@@ -1,0 +1,20 @@
+import React from 'react';
+import TileCard from './TileCard';
+
+const TopTiles = async() => {
+    const res = await fetch("http://localhost:3000/data.json");
+    const tiles = await res.json();
+    const showTopTiles = tiles.slice(0,8);
+    return (
+        <div>
+            <h1 className='text-2xl font-bold mt-5 text-center mb-5'>Top Tiles ShowCase</h1>
+            <div className='grid grid-cols-4 gap-2'>
+                {
+                    showTopTiles.map((tile)=> <TileCard key={tile.id} tile={tile}/>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default TopTiles;

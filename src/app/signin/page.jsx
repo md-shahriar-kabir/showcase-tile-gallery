@@ -11,22 +11,37 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { Icon } from "@iconify/react";
+import { toast } from "react-toastify";
 
 export default function SignInPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const name = e.target.name.value;
-    const image = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log({name, image, email, password})
+
     const {data, error} = await authClient.signIn.email({
         email,
         password,
-    })
+        callbackURL:'/',
+    });
+    if (error) {
+            toast.error(error.message);
+            return;
+        }
+
+        if (data) {
+            toast.success("SignIn Successful");
+        }
 
   };
+
+  const handleGoogleSignin = async() => {
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
+  }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
@@ -88,6 +103,8 @@ export default function SignInPage() {
           </Button>
         </div>
       </Form>
+      <p className="text-center">Or</p>
+    <Button onClick={handleGoogleSignin} variant="outline" className={'w-full'}><Icon icon="devicon:google"/>Sign In With Google</Button>
     </Card>
   );
 }

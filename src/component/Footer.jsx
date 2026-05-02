@@ -112,7 +112,7 @@ const Footer = () => {
             </h3>
 
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Generate your first AI image today.
+              Show Your Tile Design Today
             </p>
 
             <Link

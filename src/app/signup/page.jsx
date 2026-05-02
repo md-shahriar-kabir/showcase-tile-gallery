@@ -11,8 +11,15 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { Icon } from "@iconify/react";
+import { router } from "better-auth/api";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+
 
 export default function SignUpPage() {
+
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,19 +27,32 @@ export default function SignUpPage() {
     const image = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log({name, image, email, password})
+
     const {data, error} = await authClient.signUp.email({
         name,
         image,
         email,
         password,
+        callbackURL: '/',
     })
 
-    if(!error){
-      router.push('/')
-    }
+      if (error) {
+            toast.error(error.message);
+            return;
+        }
+
+        if (data) {
+            toast.success("SignUp Successful");
+            router.push('/signin');
+        }
 
   };
+
+  const handleGoogleSignin = async() => {
+    const data = await authClient.signIn.social({
+    provider: "google",
+  });
+  }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
@@ -105,6 +125,8 @@ export default function SignUpPage() {
           </Button>
         </div>
       </Form>
+      <p className="text-center">Or</p>
+      <Button onClick={handleGoogleSignin} variant="outline" className={'w-full'}><Icon icon="devicon:google"/>Sign Up With Google</Button>
     </Card>
   );
 }

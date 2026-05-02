@@ -13,7 +13,7 @@ const Banner = () => {
 
           <div className="flex gap-4'">
             <Link href="/all-tiles">
-              <Button className="bg-red-300">
+              <Button variant="outline" className="btn text-white">
                 Browse Now
               </Button>
             </Link>

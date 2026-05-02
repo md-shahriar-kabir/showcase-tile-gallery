@@ -2,11 +2,9 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+
 
 const Navbar = () => {
-
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="border-b px-3">
@@ -27,14 +25,14 @@ const Navbar = () => {
 
         <ul className="flex items-center gap-5 text-sm">
           <li>
-            <Link href={"/"} className="font-semibold">Home</Link>
+            <Link href={"/"} className="font-semibold"><Button variant="outline">Home</Button></Link>
           </li>
           <li>
-            <Link href={"/all-tiles"}className="font-semibold">All Tiles</Link>
+            <Link href={"/all-tiles"}className="font-semibold"><Button variant="outline">All Tiles</Button></Link>
           </li>
           
           <li>
-            <Link href={"/profile"}className="font-semibold">My Profile</Link>
+            <Link href={"/profile"}className="font-semibold"><Button variant="outline">My Profile</Button></Link>
           </li>
         </ul>
 

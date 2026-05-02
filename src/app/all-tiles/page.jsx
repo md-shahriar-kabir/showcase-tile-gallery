@@ -12,7 +12,7 @@ const AllTilePage = async() => {
         <div>
             <h1 className='text-3xl font-bold text-center m-4'>All Tiles Design ShowCase</h1>
     
-            <div className='grid grid-cols-4 gap-4'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4'>
                 {
                     tiles.map((tile)=> <TileCard key={tile.id} tile={tile}/>)
                 }

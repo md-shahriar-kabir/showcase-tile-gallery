@@ -1,5 +1,6 @@
 import { Button, Card, Chip } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const TileCard = ({tile}) => {
@@ -23,7 +24,7 @@ const TileCard = ({tile}) => {
                 <p>Price: ${tile.price}</p>
 
             </div>
-            <Button variant = "outline" className="w-full">View Details</Button>
+            <Link href={`all-tiles/${tile.id}`}><Button variant = "outline" className="w-full">View Details</Button></Link>
 
         </Card>
     );

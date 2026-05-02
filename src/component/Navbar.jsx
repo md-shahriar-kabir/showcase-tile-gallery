@@ -2,8 +2,12 @@
 import { Span } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const Navbar = () => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="border-b px-3">
       <nav className=" flex justify-between items-center max-w-7xl mx-auto w-full">
@@ -31,6 +35,7 @@ const Navbar = () => {
             <Link href={"/profile"}className="font-semibold">My Profile</Link>
           </li>
         </ul>
+
 
         <div className="flex gap-4">
           <ul className="flex items-center gap-2  text-sm">

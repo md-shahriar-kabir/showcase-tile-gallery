@@ -11,7 +11,8 @@ const Navbar = () => {
   return (
     <div className="border-b px-3">
       <nav className=" flex justify-between items-center max-w-7xl mx-auto w-full">
-        <div className="flex gap-1 items-center">
+        <Link href={'/'}>
+         <div className="flex gap-1 items-center">
           <Image
             src={"/logo.png"}
             alt="logo"
@@ -22,6 +23,7 @@ const Navbar = () => {
           />
           <h3 className="font-black text-[#1C1C1C] text-xl">TILE<span className="text-[#D4AF37]"> LUX</span></h3>
         </div>
+        </Link>
 
         <ul className="flex items-center gap-5 text-sm">
           <li>

@@ -20,7 +20,7 @@ const Banner = () => {
 
           <div className="flex gap-4'">
             <Link href="/all-tiles">
-              <Button variant="outline" className="btn text-white">
+              <Button variant="outline" className="btn hover:bg-[#D4AF37] text-white">
                 Browse Now
               </Button>
             </Link>

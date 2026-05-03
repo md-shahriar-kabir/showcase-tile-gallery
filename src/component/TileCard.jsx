@@ -21,7 +21,7 @@ const TileCard = ({tile}) => {
                   : "bg-red-100 text-red-600"
               }`}>{tile.inStock ? "In Stock" : "Out of Stock"}</Chip>
             </div>
-            <div className="font-medium">
+            <div className="text-xl font-bold">
                 {tile.title}
             </div>
             <div>

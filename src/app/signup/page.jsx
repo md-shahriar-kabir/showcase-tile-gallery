@@ -178,6 +178,10 @@ export default function SignUpPage() {
       // ✅ Remove callbackURL — not used for email signup
     });
 
+    if(!error){
+      router.push('/signin')
+    }
+
     if (error) {
       toast.error(error.message);
       return;

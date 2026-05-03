@@ -113,7 +113,7 @@ const tileDetailsPage = async ({ params }) => {
             {/* Buttons */}
             <div className="flex gap-4">
               <button className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition">
-                Add to Cart
+                Buy Now
               </button>
             </div>
           </div>

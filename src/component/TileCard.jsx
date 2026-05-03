@@ -15,6 +15,11 @@ const TileCard = ({tile}) => {
                 className="object-cover rounded-md"
                 />  
                 <Chip className="absolute top-2 right-2">{tile.material}</Chip>
+                <Chip className={`absolute top-2 left-2 ${
+                tile.inStock
+                  ? "bg-green-100 text-green-600"
+                  : "bg-red-100 text-red-600"
+              }`}>{tile.inStock ? "In Stock" : "Out of Stock"}</Chip>
             </div>
             <div className="font-medium">
                 Name: {tile.title}

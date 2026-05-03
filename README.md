@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧱 TileVerse — Discover Your Perfect Aesthetic
 
-## Getting Started
+A modern, full-stack tile gallery web application built with Next.js App Router,
+HeroUI, and BetterAuth. Browse curated ceramic, mosaic, and geometric tile
+collections — filter, explore details, and manage your profile seamlessly.
 
-First, run the development server:
+🌐 **Live URL:** [https://showcase-tile-gallery.vercel.app/]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Key Features
+
+- 🔍 **Smart Search** — Instantly filter tiles by title using a real-time Hero UI search bar
+- 🖼️ **Gallery View** — Responsive tile card grid with high-res previews and detail navigation
+- 🔐 **Authentication** — Email/password login + Google OAuth via BetterAuth (MongoDB Adapter)
+- 👤 **My Profile** — View and update your display name & avatar URL in real time
+- 📱 **Fully Responsive** — Optimized layouts for mobile, tablet, and desktop
+- 🎞️ **Marquee Banner** — Scrolling new-arrivals ticker on the homepage
+- 🔒 **Private Routes** — Tile details and profile pages are protected for logged-in users only
+- ⏳ **Loading States** — Skeleton loaders on all async data fetches
+- 🚫 **Custom 404 Page** — Friendly not-found experience across all routes
+
+---
+
+## 🛠️ Tech Stack & npm Packages
+
+| Package | Purpose |
+|---|---|
+| `next` | App Router framework |
+| `@heroui/react` | UI component library |
+| `better-auth` | Authentication (email + Google OAuth) |
+| `mongoose` | MongoDB adapter for BetterAuth |
+| `swiper` | Touch-friendly image carousel on detail pages |
+| `react-toast` | Toast notifications for auth feedback |
+| `react-fast-marquee` | Scrolling marquee on homepage |
+| `framer-motion` | Page transition animations |
+| `tailwind-css`  | Page Desgin |
+
+---
+
+## 📁 Project Structure
+
+├── app/
+│   ├── page.jsx              # Home page
+│   ├── all-tiles/page.jsx    # Gallery with search
+│   ├── tile/[id]/page.jsx    # Single tile details (private)
+│   ├── my-profile/page.jsx   # User profile (private)
+│   ├── login/page.jsx        # Login with Google OAuth
+│   └── register/page.jsx     # Registration
+├── components/               # Navbar, Footer, TileCard, etc.
+├── lib/                      # BetterAuth config, DB connection
+└── public/                   # Static assets
+
+---
+
+## 🔐 Route Permissions
+
+| Route | Access |
+|---|---|
+| `/` | Public |
+| `/all-tiles` | Public |
+| `/login` | Public |
+| `/register` | Public |
+| `/tile/[id]` | 🔒 Private |
+| `/my-profile` | 🔒 Private |
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env.local` file in the root:
+
+```env
+NEXT_PUBLIC_API_URL=your_json_server_url
+MONGODB_URI=your_mongodb_connection_string
+BETTER_AUTH_SECRET=your_auth_secret
+BETTER_AUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Clone the repository
+git clone https://github.com/your-username/tileverse.git
+cd tileverse
 
-## Learn More
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Run the development server
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 JSON Data Format
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each tile follows this schema:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```json
+{
+  "id": "tile_001",
+  "title": "Ceramic Blue Tile",
+  "description": "Premium ceramic tile with blue glaze finish",
+  "image": "/images/tiles/tile_001.jpg",
+  "category": "ceramic",
+  "price": 45.99,
+  "currency": "USD",
+  "dimensions": "60x60 cm",
+  "material": "Ceramic",
+  "inStock": true
+}
+```
+
+---
+
+## 👨‍💻 Author
+
+**MD SHAHRIAR KABIR**
+[GitHub](https://github.com/md-shahriar-kabir/)
+
+---

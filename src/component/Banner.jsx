@@ -1,5 +1,7 @@
+"use client";
 import { Button } from "@heroui/react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
@@ -7,9 +9,14 @@ const Banner = () => {
       {/* Overlay */}
       <div className="w-full h-full rounded-lg bg-black/50 flex items-center ">
         <div className="max-w-7xl mx-auto px-6 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-2xl">
-            Discover Your <br /> <span className="text-[#D4AF37]">Perfect Aesthetic</span>
-          </h1>
+          <motion.h1
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="text-4xl md:text-6xl font-bold mb-4 max-w-2xl"
+          >
+            Discover Your <br />{" "}
+            <span className="text-[#D4AF37]">Perfect Aesthetic</span>
+          </motion.h1>
 
           <div className="flex gap-4'">
             <Link href="/all-tiles">
@@ -17,8 +24,6 @@ const Banner = () => {
                 Browse Now
               </Button>
             </Link>
-
-           
           </div>
         </div>
       </div>

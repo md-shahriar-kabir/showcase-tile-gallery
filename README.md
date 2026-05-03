@@ -71,51 +71,12 @@ collections — filter, explore details, and manage your profile seamlessly.
 Create a `.env.local` file in the root:
 
 ```env
-NEXT_PUBLIC_API_URL=your_json_server_url
-MONGODB_URI=your_mongodb_connection_string
-BETTER_AUTH_SECRET=your_auth_secret
-BETTER_AUTH_URL=http://localhost:3000
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-```
-
----
-
-## 🚀 Getting Started
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/tileverse.git
-cd tileverse
-
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-## 📦 JSON Data Format
-
-Each tile follows this schema:
-
-```json
-{
-  "id": "tile_001",
-  "title": "Ceramic Blue Tile",
-  "description": "Premium ceramic tile with blue glaze finish",
-  "image": "/images/tiles/tile_001.jpg",
-  "category": "ceramic",
-  "price": 45.99,
-  "currency": "USD",
-  "dimensions": "60x60 cm",
-  "material": "Ceramic",
-  "inStock": true
-}
+NEXT_PUBLIC_API_URL
+MONGODB_URI
+BETTER_AUTH_SECRET
+BETTER_AUTH_URL
+GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET
 ```
 
 ---

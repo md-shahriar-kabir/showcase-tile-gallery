@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 import { toast } from "react-toastify";
 
 export default function SignInPage() {
@@ -21,34 +22,32 @@ export default function SignInPage() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const {data, error} = await authClient.signIn.email({
-        email,
-        password,
-        callbackURL:'/',
+    const { data, error } = await authClient.signIn.email({
+      email,
+      password,
+      callbackURL: "/",
     });
     if (error) {
-            toast.error(error.message);
-            return;
-        }
+      toast.error(error.message);
+      return;
+    }
 
-        if (data) {
-            toast.success("SignIn Successful");
-        }
-
+    if (data) {
+      toast.success("SignIn Successful");
+    }
   };
 
-  const handleGoogleSignin = async() => {
+  const handleGoogleSignin = async () => {
     const data = await authClient.signIn.social({
-    provider: "google",
-  });
-  }
+      provider: "google",
+    });
+  };
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
       <h1 className="text-center text-2xl font-bold">Sign In</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-
         <TextField
           isRequired
           name="email"
@@ -104,7 +103,21 @@ export default function SignInPage() {
         </div>
       </Form>
       <p className="text-center">Or</p>
-    <Button onClick={handleGoogleSignin} variant="outline" className={'w-full'}><Icon icon="devicon:google"/>Sign In With Google</Button>
+      <Button
+        onClick={handleGoogleSignin}
+        variant="outline"
+        className={"w-full"}
+      >
+        <Icon icon="devicon:google" />
+        Sign In With Google
+      </Button>
+
+      <p className="text-center pt-3">
+        Don’t have an account?{" "}
+        <Link href="/signup" className="font-bold text-[#D4AF37]">
+          Register
+        </Link>
+      </p>
     </Card>
   );
 }

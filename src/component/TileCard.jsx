@@ -22,7 +22,7 @@ const TileCard = ({tile}) => {
               }`}>{tile.inStock ? "In Stock" : "Out of Stock"}</Chip>
             </div>
             <div className="font-medium">
-                Name: {tile.title}
+                {tile.title}
             </div>
             <div>
                 <p className="truncate">{tile.description}</p>

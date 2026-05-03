@@ -46,7 +46,7 @@ export default function SignUpPage() {
   };
 
   const handleGoogleSignUp = async () => {
-      authClient.signUp.social({
+      const data = await authClient.signUp.social({
       provider: "google",
     });
   };

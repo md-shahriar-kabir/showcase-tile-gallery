@@ -1,3 +1,4 @@
+## 🧱 Project Name — ShowCase Tiles Gallery
 # 🧱 TileVerse — Discover Your Perfect Aesthetic
 
 A modern, full-stack tile gallery web application built with Next.js App Router,

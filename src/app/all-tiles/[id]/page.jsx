@@ -122,15 +122,6 @@ const tileDetailsPage = async ({ params }) => {
             </div>
           </div>
         </div>
-
-        {/* Extra Section */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">Product Details</h2>
-
-          <div className="bg-white p-6 rounded-2xl shadow-sm text-gray-600 leading-relaxed">
-            {tile.description}
-          </div>
-        </div>
       </div>
     </div>
   );

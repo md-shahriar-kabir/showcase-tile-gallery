@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gray-900 text-white text-center px-4">
+    <div className="h-screen mt-5 flex flex-col card shadow-md items-center justify-center text-gray-900 text-center px-4">
       
       {/* Animated 404 */}
       <motion.h1
@@ -22,7 +22,7 @@ export default function NotFound() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="mt-4 text-lg text-gray-300"
+        className="mt-4 text-lg text-gray-600"
       >
         Oops! Your Page Doesn't exist. Please check your URL again
       </motion.p>
@@ -34,7 +34,7 @@ export default function NotFound() {
         transition={{ delay: 0.5 }}
       >
         <Link href="/">
-          <button className="mt-6 px-6 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition">
+          <button className="mt-6 px-6 py-3 bg-white text-black border-2 rounded-full hover:bg-[#D4AF37] transition cursor-pointer">
             Go Back Home
           </button>
         </Link>

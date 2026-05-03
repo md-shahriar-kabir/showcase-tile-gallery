@@ -79,40 +79,6 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Right Section */}
-        {/* <div className="hidden md:flex gap-4 items-center">
-          {!user && (
-            <>
-              <Link href="/signup">
-                <Button variant="outline">Sign Up</Button>
-              </Link>
-              <Link href="/signin">
-                <Button variant="outline">Sign In</Button>
-              </Link>
-            </>
-          )}
-
-          {user && (
-            <div className="flex gap-3 items-center">
-              <Avatar size="sm">
-                <Avatar.Image
-                  alt={user?.name || "User"}
-                  src={user?.image}
-                  referrerPolicy="no-referrer"
-                />
-                <Avatar.Fallback>
-                  {user?.name?.charAt(0)}
-                </Avatar.Fallback>
-              </Avatar>
-              <Button
-                onClick={handleSignOut}
-                size="sm"
-                variant="danger"
-              >
-                Sign Out
-              </Button>
-            </div>
-          )}
-        </div> */}
         <div className="hidden md:flex gap-4 items-center">
           {!user &&
             authItems.map((item) => {

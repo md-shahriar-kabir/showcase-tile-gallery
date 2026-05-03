@@ -3,7 +3,9 @@ import TileCard from '@/component/TileCard';
 
 
 const AllTilePage = async() => {
-    const res = await fetch("http://localhost:3000/data.json");
+    const res = await fetch("http://localhost:3000/data.json", { 
+  cache: 'no-store' 
+});
     const tiles = await res.json();
 
     

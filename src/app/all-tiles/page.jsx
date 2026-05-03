@@ -1,5 +1,6 @@
 
 import TileCard from '@/component/TileCard';
+import Marquee from 'react-fast-marquee';
 
 
 const AllTilePage = async() => {

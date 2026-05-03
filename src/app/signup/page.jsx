@@ -34,8 +34,6 @@ export default function SignUpPage() {
       callbackURL: "/",
     });
 
-  
-
     if (error) {
       toast.error(error.message);
       return;

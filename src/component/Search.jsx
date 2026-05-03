@@ -9,6 +9,7 @@ const Search = () => {
 
     const handleSearch = () => {
         router.push(`?search=${search}`);
+        setSearch("");
     }
 
     return (

@@ -2,7 +2,7 @@ import React from 'react';
 import TileCard from './TileCard';
 
 const TopTiles = async() => {
-    const res = await fetch("http://localhost:3000/data.json", { 
+    const res = await fetch("https://showcase-tile-gallery.vercel.app/data.json", { 
   cache: 'no-store' 
 });
     const tiles = await res.json();
